@@ -7,7 +7,8 @@ public class Hello {
 		System.out.println("Hello world");
 		System.out.println("Hello world");
 		System.out.println("브라우저 수정 Hello world");
-		System.out.println("브라우저 수정 2번째 Hello world");
+		System.out.println("로컬에서 수정 Hello world");
+		System.out.println("로컬에서 수정2 Hello world");
 	}
 
 }
