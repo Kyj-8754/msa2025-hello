@@ -1,4 +1,4 @@
-package com.msa2025.veeding;
+package com.msa2025.tesk.veeding;
 
 import java.util.Arrays;
 
