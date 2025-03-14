@@ -13,6 +13,8 @@ public class Hello {
 		System.out.println("로컬에서 수정123 Hello world");
 		
 		
+		System.out.println("로컬에서 수정2 Hello world");
+		System.out.println("로컬에서 수정2 Hello world");
 	}
 
 }
