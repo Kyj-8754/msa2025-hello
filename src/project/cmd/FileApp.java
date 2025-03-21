@@ -20,7 +20,7 @@ public class FileApp {
 	}
 	// 디렉토리 확인
 	private static boolean validDirectory(File file, String dir) {
-	return file.exists() && file.getName().equalsIgnoreCase(dir);
+		return file.exists() && file.getName().equalsIgnoreCase(dir);
 	}
 	// 읽기 확인
 	private static boolean validRead(File file) {
@@ -131,7 +131,6 @@ public class FileApp {
 			File file = new File(path+"/"+arg[1]);
 			if (validRead(file)) {
 				BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
-				
 				while (true) {
 					String str = br.readLine();
 					if (str == null)
@@ -146,8 +145,6 @@ public class FileApp {
 	
 	// 순수 파일 복사 
 		private static void copy(File dir, File new_dir) throws IOException{
-			
-			System.out.println("파일복사시작");
 			try (FileInputStream fis = new FileInputStream(dir);
 				     FileOutputStream fos = new FileOutputStream(new_dir)) {
 				    byte[] buffer = new byte[4096];
@@ -157,23 +154,28 @@ public class FileApp {
 				    }
 				    fos.flush();
 				}
-			System.out.println("파일복사끝");
 		}
 
 		// 파일이 아닌 디렉토리일 경우 넘어가는 코드
 		private static void copyDirectory(File dir, File new_dir) throws IOException {
 	        File[] children = dir.listFiles();
+	        
 	        if (children != null) {
-	            for (File child : children) {
+	            
+	        	for (File child : children) {
 	                File destChild = new File(new_dir, child.getName());
+	                
 	                if (child.isDirectory()) {
 	                    destChild.mkdirs();
 	                    copyDirectory(child, destChild);
 	                } else {
 	                    copy(child, destChild);
 	                }
+	                
 	            }
 	        }
+	        
+	        
 	    }
 	
 
@@ -198,7 +200,7 @@ public class FileApp {
 				break;
 			}
 			case "*": {
-				// 파일 내용 출력
+				// 파일 전체 내용 출력
 				dirAll_cmd();
 				break;
 			}
